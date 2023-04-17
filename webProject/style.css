@@ -20,3 +20,34 @@ nav a {
     text-decoration: none;
     color: #1a1e21;
 }
+.div-content {
+    margin-top: 100px;
+}
+.div-active {
+    background: #6a1a21;
+}
+.h1-myTown {
+    margin-left: 125px;
+}
+.h5-myTown {
+    margin-left: 160px;
+}
+.li-myTown {
+    margin-left: 175px;
+}
+.p-myTown {
+    margin-left: 170px;
+    margin-right: 70px;
+}
+.img-myTownLeft {
+    margin-left: 270px;
+    margin-bottom: 50px;
+    margin-top: 30px;
+    float: left;
+}
+.img-myTownRight {
+    margin-right: 270px;
+    margin-bottom: 50px;
+    margin-top: 30px;
+    float: right;
+}
