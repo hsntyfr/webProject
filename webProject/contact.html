@@ -11,21 +11,73 @@
 <body>
 
 <div>
-  <nav class="nav">
-    <ul>
-      <li> <div> <a href="main.html">Hakkımda</a> </div>  </li>
-      <li> <div> <a href="cv.html">Özgeçmiş</a> </div> </li>
-      <li> <div> <a href="hobbies.html">İlgi Alanlarım</a> </div> </li>
-      <li> <div> <a href="myTown.html">Şehrim</a> </div> </li>
-      <li> <div> <a href="inheritance.html">Mirasımız</a> </div> </li>
-      <li> <div> <a href="login.html">Giriş Yap</a> </div> </li>
-      <li> <div class="div-active"> <a href="contact.html">İletişim</a> </div> </li>
-    </ul>
-  </nav>
+    <nav class="nav">
+        <ul>
+            <li> <div> <a href="main.html">Hakkımda</a> </div>  </li>
+            <li> <div> <a href="cv.html">Özgeçmiş</a> </div> </li>
+            <li> <div> <a href="hobbies.html">İlgi Alanlarım</a> </div> </li>
+            <li> <div> <a href="myTown.html">Şehrim</a> </div> </li>
+            <li> <div> <a href="inheritance.html">Mirasımız</a> </div> </li>
+            <li> <div> <a href="login.html">Giriş Yap</a> </div> </li>
+            <li> <div class="div-active"> <a href="contact.html">İletişim</a> </div> </li>
+        </ul>
+    </nav>
 </div>
 
-<div>
-iletişim
+<div class="div-content">
+    <h1>İletişim Formu</h1>
+
+    <form name="contact">
+        <table>
+            <tr>
+                <td>Ad: </td>
+                <td><input type="text" name="name" autofocus></td>
+            </tr>
+            <tr>
+                <td>Soyad: </td>
+                <td><input type="text" name="surname"></td>
+            </tr>
+            <tr>
+                <td>Cinsiyet: </td>
+                <td><input type="radio" name="gender" value="erkek" checked> Erkek <br> <input type="radio" name="gender" value="female"> Kadin<br></td></tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Gönder"></td></tr>
+            <tr>
+                <td></td>
+                <td><input type="reset" value="Temizle"></td></tr>
+            <tr>
+                <td>Açıklama: </td>
+                <td><textarea name="desc"></textarea></td></tr>
+            <tr>
+                <td>Geri Dönüş Talebi: </td>
+                <td><input type="checkbox" name="wantAnswer"></td></tr>
+            <tr>
+                <td>İletişim Türü: </td>
+                <td>
+                    <select name="dyeri" >
+                        <option>
+                            İstek
+                        </option>
+                        <option>
+                            Şikayet
+                        </option>
+                        <option>
+                            Öneri
+                        </option>
+                        <option selected>
+                            Teşekkür
+                        </option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Dosya: </td>
+                <td><input type="file" name="dosya"></td>
+            </tr>
+
+        </table>
+    </form>
 </div>
 
 
