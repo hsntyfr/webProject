@@ -73,3 +73,47 @@ header {
 table tr td {
     border: 3px;
 }
+.çerçeve {
+    width: 30%;
+    overflow: hidden;
+    margin: auto;
+}
+.galeri {
+    position: relative;
+    width: 400%;
+    left: 0;
+    animation: 2s slayt infinite;
+}
+.galeri img {
+    width: 25%;
+    float: left;
+}
+@keyframes slayt {
+    0% {
+        left: 0%;
+    }
+    20% {
+        left: 0%;
+    }
+    25% {
+        left: -100%;
+    }
+    45% {
+        left: -100%;
+    }
+    50% {
+        left: -200%;
+    }
+    70% {
+        left: -200%;
+    }
+    75% {
+         left: -300%;
+     }
+    95% {
+        left: -300%;
+    }
+    100% {
+        left: -400%;
+    }
+}
