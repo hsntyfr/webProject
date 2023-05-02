@@ -117,9 +117,6 @@ table tr td {
         left: -400%;
     }
 }
-.map {
-    text-align: center;
-}
 
 .center {
     display: block;
@@ -127,4 +124,5 @@ table tr td {
     margin-right: auto;
     margin-bottom: 40px;
     width: 50%;
+    text-align: center;
 }
