@@ -12,22 +12,21 @@
             var surname = document.forms["form"]["surname"].value;
             var email = document.forms["form"]["email"].value;
             var share = document.getElementById("share");
-            var gender = document.getElementsByName("gender");
             var indexOfAt = email.search("@");
             var indexOfDomain = email.search(".com");
-            if (name == "") {
+            if (name === "") {
                 alert("Lütfen adınızı giriniz");
                 return false;
             }
-            if (surname == "") {
+            if (surname === "") {
                 alert("Lütfen soyadınızı giriniz");
                 return false;
             }
-            if (email == "") {
+            if (email === "") {
                 alert("Lütfen e-posta adresinizi giriniz");
                 return false;
             }
-            if (email != "") {
+            if (email !== "") {
                 if (indexOfDomain < indexOfAt || indexOfDomain == -1 || indexOfAt == -1) {
                     alert("Lütfen geçerli bir e-posta giriniz");
                     return false;
@@ -37,12 +36,6 @@
                 alert("lütfen verilerinizin işlenmesini onaylayınız")
                 return false;
             }
-            for(var i = 0; i < radio.length; i++) {
-                if(radio[i].checked) {
-                    console.log("Seçilen seçenek: " + radio[i].value);
-                }
-            }
-
             return true;
         }
     </script>
