@@ -1,4 +1,5 @@
 const url = 'http://ergast.com/api/f1/'
+const urlBack = '.json?callback=myParser'
 
 
 const setQuery = (event) => {
@@ -9,21 +10,22 @@ const setQuery = (event) => {
 
 }
 const getResult = (year) => {
-    let query = `${url}${year}`
+    let query = `${url}${year}${urlBack}`
     console.log(query);
     fetch(query)
         .then(result => {
-        return result.json;
+        return result;
     })
         .then(displayResult)
 }
 
 const displayResult = (result) => {
-    let city = `${result.MRData.DriverTable.Drivers.driverId}`
+    let city = result;
     console.log(city);
-}
+};
 
 
 
 const searchBar = document.getElementById('serachBar')
 searchBar.addEventListener('keypress', setQuery)
+

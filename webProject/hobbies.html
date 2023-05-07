@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="style.css">
     <title>İlgi Alanlarım</title>
-
 </head>
 
 <body>
@@ -25,12 +24,73 @@
 
 <div class="div-content">
 <input type="text" id="serachBar" placeholder="yıl giriniz">
-    <div id="data-container"></div>
+    <table>
+        <thead>
+        <tr>
+            <th>Pozisyon</th>
+            <th>Sürücü</th>
+            <th>Takım</th>
+            <th>Puan</th>
+        </tr>
+        </thead>
+        <tbody id="veriler"></tbody>
+    </table>
+
+    <script>
+        const url = 'http://ergast.com/api/f1/'
+        const urlBack = '.json'
+
+
+        const setQuery = (event) => {
+            if(event.keyCode == '13')
+            {
+                getResult(searchBar.value)
+            }
+
+        }
+        const getResult = (year) => {
+            let query = `${url}${year}${urlBack}`
+            console.log(query);
+            fetch(query)
+                .then(result => {
+                    return result;
+                })
+                .then(displayResult)
+        }
+
+        const displayResult = (result) => {
+            let city = result.MRData;
+            console.log(city);
+        };
+
+
+
+        const searchBar = document.getElementById('serachBar')
+        searchBar.addEventListener('keypress', setQuery)
+
+        function myParser(result) {
+            var veriler = result.MRData.StandingsTable.StandingsLists[0].DriverStandings;
+            var tbody = document.getElementById("veriler");
+
+            for (var i = 0; i < veriler.length; i++) {
+                var row = tbody.insertRow(i);
+                var posCell = row.insertCell(0);
+                var driverCell = row.insertCell(1);
+                var teamCell = row.insertCell(2);
+                var pointsCell = row.insertCell(3);
+
+                posCell.innerHTML = veriler[i].position;
+                driverCell.innerHTML = veriler[i].Driver.givenName + " " + veriler[i].Driver.familyName;
+                teamCell.innerHTML = veriler[i].Constructors[0].name;
+                pointsCell.innerHTML = veriler[i].points;
+            }
+        }
+
+    </script>
 
 </div>
 
 
-<script src="app.js"></script>
 
 </body>
 
