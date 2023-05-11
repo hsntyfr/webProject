@@ -120,12 +120,16 @@ table tr td {
         left: -400%;
     }
 }
-
 .center {
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 40px;
     width: 50%;
+    text-align: center;
+}
+.table{
+    border: solid black;
+    margin: auto;
     text-align: center;
 }
