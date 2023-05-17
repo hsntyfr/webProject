@@ -13,6 +13,7 @@ if (!empty($_POST["email"])) //There is checked if e-mail is there
             if ($username == $password) //There is checked if password is equal username
             {
                 echo "Hoşgeldiniz ".$username;
+                header("refresh:3; login.html");
             }
             else
             {

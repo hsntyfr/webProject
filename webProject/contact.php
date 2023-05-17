@@ -6,9 +6,9 @@ $gender = $_POST["gender"];
 $message = $_POST["message"];
 $answer = $_POST["answer"];
 $purpose = $_POST["purpose"];
-echo ("Ad: $name");
-echo ("\nSoyad: $surname");
-echo ("\nE-mail: $email");
+echo nl2br("Ad: $name");
+echo nl2br("\nSoyad: $surname");
+echo nl2br("\nE-mail: $email");
 if($gender == "erkek")
 {
     $gender = "erkek";
@@ -17,40 +17,41 @@ else
 {
     $gender = "kadın";
 }
-echo ("\nCinsiyet: $gender");
-echo ("\nKişisel verilerin kullanımını onayladı");
+echo nl2br("\nCinsiyet: $gender");
+echo nl2br("\nKişisel verilerin kullanımını onayladı");
 if($answer == "answerOk")
 {
-    $gender = ("\nGeri dönüş istiyor.");
+    echo nl2br("\nGeri dönüş istiyor.");
 }
 else
 {
-    $gender = ("\nGeri dönüş istemiyor");
+    echo nl2br("\nGeri dönüş istemiyor.");
 }
 if ($purpose == "blank")
 {
-    echo ("\nSeçim yapılmadı");
+    echo nl2br("\nSeçim yapılmadı");
 }
 else if ($purpose == "suggest")
 {
-    echo ("\nBu bir öneri başvurusudur");
+    echo nl2br("\nBu bir öneri başvurusudur");
 }
 else if ($purpose == "complaint")
 {
-    echo ("\nBu bir şikayet başvurusudur");
+    echo nl2br("\nBu bir şikayet başvurusudur");
 }
 else if ($purpose == "thanks")
 {
-    echo ("\nBu bir teşekkür başvurusudur");
+    echo nl2br("\nBu bir teşekkür başvurusudur");
 }
 if ($message != "")
 {
-    echo ("Başvuru detayı: $message");
+    echo nl2br("\nBaşvuru detayı: $message");
 }
 else
 {
-    echo ("Herhangi bir açıklama eklenmemiş");
+    echo nl2br("\nHerhangi bir açıklama eklenmemiş");
 }
+header("refresh:10; contact.html");
 ?>
 
 

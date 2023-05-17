@@ -1,15 +1,19 @@
+body {
+    background: antiquewhite;
+    color: lightslategray;
+}
 nav {
-    position: fixed;
+
     top: 0;
     width: 100%;
-    background: #6f42c1;
+    background: lightpink;
 }
 nav div {
     margin-top: 25px;
     margin-bottom: 10px;
     margin-left: 100px;
     text-align: center;
-    background: #d1d2d4;
+    background: lightskyblue;
     padding: 5px;
 }
 nav li{
@@ -21,13 +25,14 @@ nav a {
     color: #1a1e21;
 }
 nav a:hover {
-    background-color: yellow;
+    background-color: white;
 }
 .div-content {
-    margin-top: 100px;
+    margin-top: 50px;
+    position: relative;
 }
 .div-active {
-    background: #6a1a21;
+    background: hotpink;
 }
 .h1-myTown {
     margin-left: 125px;
@@ -73,7 +78,7 @@ header {
     margin-left: 100px;
     margin-top: 100px;
 }
-table tr td {
+.table, tr, td {
     border: 3px;
 }
 .çerçeve {
@@ -81,13 +86,13 @@ table tr td {
     overflow: hidden;
     margin: auto;
 }
-.galeri {
+.slider {
     position: relative;
     width: 400%;
     left: 0;
     animation: 10s slayt infinite;
 }
-.galeri img {
+.slider img {
     width: 25%;
     float: left;
 }
@@ -132,4 +137,19 @@ table tr td {
     border: solid black;
     margin: auto;
     text-align: center;
+}
+
+.h-color-red td{
+    color: red;
+}
+#red {
+    color: red;
+}
+span {
+    float: initial;
+    margin-left: 125px;
+    margin-bottom: 30px;
+}
+.spacer {
+    margin-bottom: 60px;
 }

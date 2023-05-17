@@ -1,119 +1,110 @@
 <!DOCTYPE html>
 <html lang="tr" dir="ltr">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="bootstrap.css">
-    <link rel="stylesheet" href="style.css">
-    <title>İlgi Alanlarım</title>
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="bootstrap.css">
+        <link rel="stylesheet" href="style.css">
+        <title>İlgi Alanlarım</title>
+    </head>
 
-<body>
-
-    <nav class="nav">
-        <ul>
-            <li> <div> <a href="index.html">Hakkımda</a> </div>  </li>
-            <li> <div> <a href="cv.html">Özgeçmiş</a> </div> </li>
-            <li> <div class="div-active"> <a href="hobbies.html">İlgi Alanlarım</a> </div> </li>
-            <li> <div> <a href="town.html">Şehrim</a> </div> </li>
-            <li> <div> <a href="inheritance.html">Mirasımız</a> </div> </li>
-            <li> <div> <a href="login.html">Giriş Yap</a> </div> </li>
-            <li> <div> <a href="contact.html">İletişim</a> </div> </li>
-        </ul>
-    </nav>
-
-    <div class="div-content">
-        <h1 class="center">Girdiğiniz yıla ait Formula 1 sonuçlarını sorgulayabilirsiniz...</h1>
-        <h4 class="center">(1950-Günümüz)</h4>
-        <input class="center" type="text" id="searchBar" placeholder="Lütfen yıl giriniz">
-        <script src="app.js"></script>
-        <h1 style="color: red" class="center">Round 1</h1>
-        <table class="table" border="3">
-            <tr>
-                <td>Sıralama</td>
-                <td>Sürücü</td>
-                <td>Araba</td>
-                <td>Süre</td>
-            </tr>
-            <tr>
-                <td>1.</td>
-                <td id="name-1.1"></td>
-                <td id="car-1.1"></td>
-                <td id="time-1.1"></td>
-            </tr>
-            <tr>
-                <td>2.</td>
-                <td id="name-1.2"></td>
-                <td id="car-1.2"></td>
-                <td id="time-1.2"></td>
-            </tr>
-            <tr>
-                <td>3.</td>
-                <td id="name-1.3"></td>
-                <td id="car-1.3"></td>
-                <td id="time-1.3"></td>
-            </tr>
-            <tr>
-                <td>4.</td>
-                <td id="name-1.4"></td>
-                <td id="car-1.4"></td>
-                <td id="time-1.4"></td>
-            </tr>
-            <tr>
-                <td>5.</td>
-                <td id="name-1.5"></td>
-                <td id="car-1.5"></td>
-                <td id="time-1.5"></td>
-            </tr>
-
-        </table>
-
-        <h1 style="color: red" class="center">Round 2</h1>
-        <table class="table" border="3">
-            <tr>
-                <td>Sıralama</td>
-                <td>Sürücü</td>
-                <td>Araba</td>
-                <td>Süre</td>
-            </tr>
-            <tr>
-                <td>1.</td>
-                <td id="name-2.1"></td>
-                <td id="car-2.1"></td>
-                <td id="time-2.1"></td>
-            </tr>
-            <tr>
-                <td>2.</td>
-                <td id="name-2.2"></td>
-                <td id="car-2.2"></td>
-                <td id="time-2.2"></td>
-            </tr>
-            <tr>
-                <td>3.</td>
-                <td id="name-2.3"></td>
-                <td id="car-2.3"></td>
-                <td id="time-2.3"></td>
-            </tr>
-            <tr>
-                <td>4.</td>
-                <td id="name-2.4"></td>
-                <td id="car-2.4"></td>
-                <td id="time-2.4"></td>
-            </tr>
-            <tr>
-                <td>5.</td>
-                <td id="name-2.5"></td>
-                <td id="car-2.5"></td>
-                <td id="time-2.5"></td>
-            </tr>
-
-        </table>
-
-
-    </div>
-
-
-
-</body>
-
+    <body>
+        <nav class="nav">
+            <ul>
+                <li> <div> <a href="index.html">Hakkımda</a> </div>  </li>
+                <li> <div> <a href="cv.html">Özgeçmiş</a> </div> </li>
+                <li> <div class="div-active"> <a href="hobbies.html">İlgi Alanlarım</a> </div> </li>
+                <li> <div> <a href="town.html">Şehrim</a> </div> </li>
+                <li> <div> <a href="inheritance.html">Mirasımız</a> </div> </li>
+                <li> <div> <a href="login.html">Giriş Yap</a> </div> </li>
+                <li> <div> <a href="contact.html">İletişim</a> </div> </li>
+            </ul>
+        </nav>
+        <div class="div-content">
+            <h1 class="center">Girdiğiniz yıla ait Formula 1 sonuçlarını sorgulayabilirsiniz...</h1>
+            <h4 class="center">(1950-Günümüz)</h4>
+            <input class="center" type="text" id="searchBar" placeholder="Lütfen yıl giriniz">
+            <script src="app.js"></script>
+            <h1 class="center" id="red">Round 1</h1>
+            <table class="table" border="3">
+                <tr class="h-color-red">
+                    <td>Sıralama</td>
+                    <td>Sürücü</td>
+                    <td>Araba</td>
+                    <td>Süre</td>
+                </tr>
+                <tr>
+                    <td>1.</td>
+                    <td id="name-1.1"></td>
+                    <td id="car-1.1"></td>
+                    <td id="time-1.1"></td>
+                </tr>
+                <tr>
+                    <td>2.</td>
+                    <td id="name-1.2"></td>
+                    <td id="car-1.2"></td>
+                    <td id="time-1.2"></td>
+                </tr>
+                <tr>
+                    <td>3.</td>
+                    <td id="name-1.3"></td>
+                    <td id="car-1.3"></td>
+                    <td id="time-1.3"></td>
+                </tr>
+                <tr>
+                    <td>4.</td>
+                    <td id="name-1.4"></td>
+                    <td id="car-1.4"></td>
+                    <td id="time-1.4"></td>
+                </tr>
+                <tr>
+                    <td>5.</td>
+                    <td id="name-1.5"></td>
+                    <td id="car-1.5"></td>
+                    <td id="time-1.5"></td>
+                </tr>
+            </table>
+            <div class="spacer"></div>
+            <h1 class="center" id="red">Round 2</h1>
+            <table class="table" border="3">
+                <tr class="h-color-red">
+                    <td>Sıralama</td>
+                    <td>Sürücü</td>
+                    <td>Araba</td>
+                    <td>Süre</td>
+                </tr>
+                <tr>
+                    <td>1.</td>
+                    <td id="name-2.1"></td>
+                    <td id="car-2.1"></td>
+                    <td id="time-2.1"></td>
+                </tr>
+                <tr>
+                    <td>2.</td>
+                    <td id="name-2.2"></td>
+                    <td id="car-2.2"></td>
+                    <td id="time-2.2"></td>
+                </tr>
+                <tr>
+                    <td>3.</td>
+                    <td id="name-2.3"></td>
+                    <td id="car-2.3"></td>
+                    <td id="time-2.3"></td>
+                </tr>
+                <tr>
+                    <td>4.</td>
+                    <td id="name-2.4"></td>
+                    <td id="car-2.4"></td>
+                    <td id="time-2.4"></td>
+                </tr>
+                <tr>
+                    <td>5.</td>
+                    <td id="name-2.5"></td>
+                    <td id="car-2.5"></td>
+                    <td id="time-2.5"></td>
+                </tr>
+            </table>
+        </div>
+    </body>
+    <div class="spacer"></div>
 </html>

@@ -1,140 +1,122 @@
 <!DOCTYPE html>
 <html lang="tr" dir="ltr">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="bootstrap.css">
-    <link rel="stylesheet" href="style.css">
-    <title>İletişim</title>
-    <script>
-        function checkForm() {
-            var name = document.forms["form"]["name"].value;
-            var surname = document.forms["form"]["surname"].value;
-            var email = document.forms["form"]["email"].value;
-            var share = document.getElementById("share");
-            var indexOfAt = email.search("@");
-            var indexOfDomain = email.search(".com");
-            if (name === "") {
-                alert("Lütfen adınızı giriniz");
-                return false;
-            }
-            if (surname === "") {
-                alert("Lütfen soyadınızı giriniz");
-                return false;
-            }
-            if (email === "") {
-                alert("Lütfen e-posta adresinizi giriniz");
-                return false;
-            }
-            if (email !== "") {
-                if (indexOfDomain < indexOfAt || indexOfDomain == -1 || indexOfAt == -1) {
-                    alert("Lütfen geçerli bir e-posta giriniz");
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="bootstrap.css">
+        <link rel="stylesheet" href="style.css">
+        <title>İletişim</title>
+        <script>
+            function checkForm() {
+                var name = document.forms["form"]["name"].value;
+                var surname = document.forms["form"]["surname"].value;
+                var email = document.forms["form"]["email"].value;
+                var share = document.getElementById("share");
+                var indexOfAt = email.search("@");
+                var indexOfDomain = email.search(".com");
+                if (name === "") {
+                    alert("Lütfen adınızı giriniz");
                     return false;
                 }
+                if (surname === "") {
+                    alert("Lütfen soyadınızı giriniz");
+                    return false;
+                }
+                if (email === "") {
+                    alert("Lütfen e-posta adresinizi giriniz");
+                    return false;
+                }
+                if (email !== "") {
+                    if (indexOfDomain < indexOfAt || indexOfDomain == -1 || indexOfAt == -1) {
+                        alert("Lütfen geçerli bir e-posta giriniz");
+                        return false;
+                    }
+                }
+                if (!share.checked) {
+                    alert("lütfen verilerinizin işlenmesini onaylayınız")
+                    return false;
+                }
+                return true;
             }
-            if (!share.checked) {
-                alert("lütfen verilerinizin işlenmesini onaylayınız")
-                return false;
-            }
-            return true;
-        }
-    </script>
-</head>
+        </script>
+    </head>
+    <body>
+        <nav class="nav">
+            <ul>
+                <li> <div> <a href="index.html">Hakkımda</a> </div>  </li>
+                <li> <div> <a href="cv.html">Özgeçmiş</a> </div> </li>
+                <li> <div> <a href="hobbies.html">İlgi Alanlarım</a> </div> </li>
+                <li> <div> <a href="town.html">Şehrim</a> </div> </li>
+                <li> <div> <a href="inheritance.html">Mirasımız</a> </div> </li>
+                <li> <div> <a href="login.html">Giriş Yap</a> </div> </li>
+                <li> <div class="div-active"> <a href="contact.html">İletişim</a> </div> </li>
+            </ul>
+        </nav>
+        <div class="div-content">
+            <h1 class="center">İletişim Formu</h1>
+            <form onsubmit="return checkForm()" name="form" action="contact.php" method="post" class="center">
+                <table class="center">
+                    <tr>
+                        <td>Ad: </td>
+                        <td><input type="text" name="name" id="name" v-model="name" autofocus></td>
+                    </tr>
+                    <tr>
+                        <td>Soyad: </td>
+                        <td><input type="text" name="surname" id="surname"></td>
+                    </tr>
+                    <tr>
+                        <td>Email: </td>
+                        <td><input type="email" name="email" id="email"></td>
+                    </tr>
+                    <tr>
+                        <td>Cinsiyet: </td>
+                        <td><input type="radio" name="gender" value="erkek" checked> Erkek</td>
 
-<body>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="radio" name="gender" value="kadın"> Kadın</td>
+                    </tr>
 
-<nav class="nav">
-    <ul>
-        <li> <div> <a href="index.html">Hakkımda</a> </div>  </li>
-        <li> <div> <a href="cv.html">Özgeçmiş</a> </div> </li>
-        <li> <div> <a href="hobbies.html">İlgi Alanlarım</a> </div> </li>
-        <li> <div> <a href="town.html">Şehrim</a> </div> </li>
-        <li> <div> <a href="inheritance.html">Mirasımız</a> </div> </li>
-        <li> <div> <a href="login.html">Giriş Yap</a> </div> </li>
-        <li> <div class="div-active"> <a href="contact.html">İletişim</a> </div> </li>
-    </ul>
-</nav>
-
-<div class="div-content">
-    <h1 class="center">İletişim Formu</h1>
-    <form onsubmit="return checkForm()" name="form" action="contact.php"  method="post" class="center">
-        <table class="center">
-            <tr>
-                <td>Ad: </td>
-                <td><input type="text" name="name" id="name" autofocus></td>
-            </tr>
-            <tr>
-                <td>Soyad: </td>
-                <td><input type="text" name="surname" id="surname"></td>
-            </tr>
-            <tr>
-                <td>Email: </td>
-                <td><input type="email" name="email" id="email"></td>
-            </tr>
-            <tr>
-                <td>Cinsiyet: </td>
-                <td><input type="radio" name="gender" value="erkek" checked> Erkek</td>
-
-            </tr>
-            <tr>
-                <td></td>
-                <td><input type="radio" name="gender" value="kadın"> Kadın</td>
-            </tr>
-
-            <tr>
-                <td>Açıklama: </td>
-                <td><textarea name="message"></textarea></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><input type="radio" name="answer" value="answerOk" checked>  Geri Dönüş İstiyorum</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><input type="radio" name="answer" value="answerNo">  Geri Dönüş İstemiyorum</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><input type="checkbox" name="share" id="share">  Bilgilerimin Paylaşılmasını onaylıyorum</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>
-                    <select name="purpose">
-                        <option value="blank">Lütfen Seçim Yapınız</option>
-                        <option value="suggest">Öneri</option>
-                        <option value="complaint">Şikayet</option>
-                        <option value="thanks">Teşekkür</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td><input type="button" value="javascript" onclick="checkForm()"></td>
-                <td><input type="button" value="framework"></td>
-            </tr>
-            <tr>
-                <td><input type="submit" value="Gönder" ></td>
-                <td><input type="reset" value="Temizle"></td>
-            </tr>
-
-
-
-
-
-
-
-        </table>
-    </form>
-
-</div>
-
-
-
-
-
-
-</body>
-
+                    <tr>
+                        <td>Açıklama: </td>
+                        <td><textarea name="message"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="radio" name="answer" value="answerOk" checked>  Geri Dönüş İstiyorum</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="radio" name="answer" value="answerNo">  Geri Dönüş İstemiyorum</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="checkbox" name="share" id="share">  Bilgilerimin Paylaşılmasını onaylıyorum</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <select name="purpose">
+                                <option value="blank">Lütfen Seçim Yapınız</option>
+                                <option value="suggest">Öneri</option>
+                                <option value="complaint">Şikayet</option>
+                                <option value="thanks">Teşekkür</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input class="btn btn-info btn-sm" type="button" value="javascript" onclick="checkForm()"></td>
+                        <td><input class="btn btn-info btn-sm" type="button" @click="checkInput" value="framework"></td>
+                    </tr>
+                    <tr>
+                        <td><input class="btn btn-success btn-sm" type="submit" value="Gönder" ></td>
+                        <td><input class="btn btn-danger btn-sm" type="reset" value="Temizle"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
 </html>
