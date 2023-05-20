@@ -6,7 +6,10 @@
         <link rel="stylesheet" href="bootstrap.css">
         <link rel="stylesheet" href="style.css">
         <title>İletişim</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script type="text/javascript" src="contact.js"></script>
         <script>
+            <!--This script includes javascript codes-->
             function checkForm() {
                 var name = document.forms["form"]["name"].value;
                 var surname = document.forms["form"]["surname"].value;
@@ -54,7 +57,7 @@
         </nav>
         <div class="div-content">
             <h1 class="center">İletişim Formu</h1>
-            <form onsubmit="return checkForm()" name="form" action="contact.php" method="post" class="center">
+            <form onsubmit="return checkForm()" name="form" id="form"  @submit.prevent="checkForm" action="contact.php" method="post" class="center">
                 <table class="center">
                     <tr>
                         <td>Ad: </td>
@@ -62,11 +65,11 @@
                     </tr>
                     <tr>
                         <td>Soyad: </td>
-                        <td><input type="text" name="surname" id="surname"></td>
+                        <td><input type="text" name="surname" id="surname" v-model="surname"></td>
                     </tr>
                     <tr>
                         <td>Email: </td>
-                        <td><input type="email" name="email" id="email"></td>
+                        <td><input type="email" name="email" id="email" v-model="email"></td>
                     </tr>
                     <tr>
                         <td>Cinsiyet: </td>
@@ -109,7 +112,7 @@
                     </tr>
                     <tr>
                         <td><input class="btn btn-info btn-sm" type="button" value="javascript" onclick="checkForm()"></td>
-                        <td><input class="btn btn-info btn-sm" type="button" @click="checkInput" value="framework"></td>
+                        <td><input class="btn btn-info btn-sm" type="button" @submit.prevent="checkForm" value="framework"></td>
                     </tr>
                     <tr>
                         <td><input class="btn btn-success btn-sm" type="submit" value="Gönder" ></td>
