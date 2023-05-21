@@ -7,7 +7,6 @@
         <link rel="stylesheet" href="style.css">
         <title>İletişim</title>
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-        <script type="text/javascript" src="contact.js"></script>
         <script>
             <!--This script includes javascript codes-->
             function checkForm() {
@@ -57,7 +56,7 @@
         </nav>
         <div class="div-content">
             <h1 class="center">İletişim Formu</h1>
-            <form onsubmit="return checkForm()" name="form" id="form"  @submit.prevent="checkForm" action="contact.php" method="post" class="center">
+            <form onsubmit="return checkForm()" name="form" id="form"  @submit.prevent="handleSubmit" action="contact.php" method="post" class="center">
                 <table class="center">
                     <tr>
                         <td>Ad: </td>
@@ -112,7 +111,7 @@
                     </tr>
                     <tr>
                         <td><input class="btn btn-info btn-sm" type="button" value="javascript" onclick="checkForm()"></td>
-                        <td><input class="btn btn-info btn-sm" type="button" @submit.prevent="checkForm" value="framework"></td>
+                        <td><input class="btn btn-info btn-sm" type="button" @click="checkForm" value="framework"></td>
                     </tr>
                     <tr>
                         <td><input class="btn btn-success btn-sm" type="submit" value="Gönder" ></td>
@@ -120,6 +119,35 @@
                     </tr>
                 </table>
             </form>
+            <script>
+                <!--This script includes javascript codes-->
+                const app = Vue.createApp({
+                    data() {
+                        return {
+                            name: '',
+                            surname: '',
+                            email: '',
+                        };
+                    },
+                    methods: {
+                        handleSubmit() {
+
+                        },
+                        checkForm() {
+                            if (this.name === '') {
+                                alert('Lütfen adınızı giriniz');
+                            }
+                            if (this.surname === '') {
+                                alert('Lütfen soyadınızı giriniz');
+                            }
+                            if (this.email === '') {
+                                alert('Lütfen e-posta adresinizi giriniz');
+                            }
+                        },
+                    },
+                });
+                app.mount('#form');
+            </script>
         </div>
     </body>
 </html>
